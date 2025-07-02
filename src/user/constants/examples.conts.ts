@@ -1,0 +1,58 @@
+export const GET_ALL_USER_EXAMPLE = {
+  users: [
+    {
+      userId: 'd423cb14-3687-48a6-914e-b35d523c19a7',
+      identificationNumber: '1120066430',
+      fullName: 'NOMBRE NOMBRE APELLIDO APELLIDO',
+      email: 'test@gmail.com',
+      password: 'passwordhasheada',
+      confirmPassword: 'passwordhasheada',
+      createdAt: '2025-03-11T08:09:04.363Z',
+    },
+    {
+      userId: 'd423cb14-3687-48a6-914e-b35d523c19a7',
+      identificationNumber: '1120066430',
+      fullName: 'NOMBRE NOMBRE APELLIDO APELLIDO',
+      email: 'test@gmail.com',
+      password: 'passwordhasheada',
+      confirmPassword: 'passwordhasheada',
+      createdAt: '2025-03-11T08:09:04.363Z',
+    },
+    {
+      userId: 'd423cb14-3687-48a6-914e-b35d523c19a7',
+      identificationNumber: '1120066430',
+      fullName: 'NOMBRE NOMBRE APELLIDO APELLIDO',
+      email: 'test@gmail.com',
+      password: 'passwordhasheada',
+      confirmPassword: 'passwordhasheada',
+      createdAt: '2025-03-11T08:09:04.363Z',
+    },
+    {
+      userId: 'd423cb14-3687-48a6-914e-b35d523c19a7',
+      identificationNumber: '1120066430',
+      fullName: 'NOMBRE NOMBRE APELLIDO APELLIDO',
+      email: 'test@gmail.com',
+      password: 'passwordhasheada',
+      confirmPassword: 'passwordhasheada',
+      createdAt: '2025-03-11T08:09:04.363Z',
+    },
+    {
+      userId: 'd423cb14-3687-48a6-914e-b35d523c19a7',
+      identificationNumber: '1120066430',
+      fullName: 'NOMBRE NOMBRE APELLIDO APELLIDO',
+      email: 'test@gmail.com',
+      password: 'passwordhasheada',
+      confirmPassword: 'passwordhasheada',
+      createdAt: '2025-03-11T08:09:04.363Z',
+    },
+  ],
+};
+export const GET_USER_EXAMPLE = {
+  userId: 'd423cb14-3687-48a6-914e-b35d523c19a7',
+  identificationNumber: '1120066430',
+  fullName: 'NOMBRE NOMBRE APELLIDO APELLIDO',
+  email: 'test@gmail.com',
+  password: 'passwordhasheada',
+  confirmPassword: 'passwordhasheada',
+  createdAt: '2025-03-11T08:09:04.363Z',
+};

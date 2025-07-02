@@ -6,6 +6,8 @@ import { ConfigModule } from '@nestjs/config';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
 import { SharedModule } from './shared/shared.module';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -17,6 +19,8 @@ import { SharedModule } from './shared/shared.module';
       rootPath: join(__dirname, '..', 'public'),
     }),
     SharedModule.forRoot(),
+    UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -31,6 +31,11 @@ export class User {
   })
   email: string;
 
+  @Column('date', {
+    nullable: true,
+  })
+  dateOfBirth?: Date;
+
   @Column('varchar', {
     length: 255,
     nullable: false,

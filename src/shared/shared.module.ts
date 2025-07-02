@@ -8,6 +8,9 @@ import { User } from './entities/user.entity';
 import { RoleType } from './entities/roleType.entity';
 import { UserRepository } from './repositories/user.repository';
 import { RoleTypeRepository } from './repositories/roleType.repository';
+import { RepositoryService } from './services/repositoriry.service';
+import { AccessSessions } from './entities/accessSessions.entity';
+import { AccessSessionsRepository } from './repositories/accessSessions.repository';
 
 @Module({})
 export class SharedModule {
@@ -37,7 +40,7 @@ export class SharedModule {
           }),
         }),
         PassportModule,
-        TypeOrmModule.forFeature([User, RoleType]),
+        TypeOrmModule.forFeature([User, RoleType, AccessSessions]),
         JwtModule.registerAsync({
           inject: [ConfigService],
           useFactory: (configService: ConfigService) => ({
@@ -50,8 +53,19 @@ export class SharedModule {
         }),
       ],
       controllers: [],
-      providers: [UserRepository, RoleTypeRepository],
-      exports: [TypeOrmModule, UserRepository, RoleTypeRepository],
+      providers: [
+        UserRepository,
+        RoleTypeRepository,
+        RepositoryService,
+        AccessSessionsRepository,
+      ],
+      exports: [
+        TypeOrmModule,
+        UserRepository,
+        RoleTypeRepository,
+        RepositoryService,
+        AccessSessionsRepository,
+      ],
     };
   }
 }
