@@ -1,12 +1,33 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
-import { IsArray, IsOptional } from 'class-validator';
+import { IsArray, IsOptional, IsString } from 'class-validator';
 import { OrderConst } from '../constants/order.constants';
 import { PageMetaDto } from './pageMeta.dto';
 
 export class ParamsPaginationDto {
-  @ApiPropertyOptional({ enum: OrderConst, default: OrderConst.ASC })
+  @ApiPropertyOptional({
+    enum: OrderConst,
+    enumName: 'OrderConst',
+    default: OrderConst.DESC,
+  })
   @IsOptional()
-  order?: OrderConst = OrderConst.ASC;
+  order?: OrderConst = OrderConst.DESC;
+
+  @ApiProperty({
+    example: 'createdAt',
+    description: 'Campo por el cual ordenar',
+    required: false,
+    enum: [
+      'identificationNumber',
+      'fullName',
+      'email',
+      'dateOfBirth',
+      'createdAt',
+      'roleType.name',
+    ],
+  })
+  @IsOptional()
+  @IsString()
+  orderBy?: string;
 
   @ApiProperty({
     type: Number,

@@ -96,11 +96,33 @@ export class CrudUserService {
     }
     // ...
 
+    const orderOptions = {};
+    if (params.orderBy) {
+      const allowedSortFields = [
+        'identificationNumber',
+        'fullName',
+        'email',
+        'dateOfBirth',
+        'createdAt',
+        'roleType.name',
+      ];
+
+      if (allowedSortFields.includes(params.orderBy)) {
+        if (params.orderBy === 'roleType.name') {
+          orderOptions['roleType'] = { name: params.order };
+        } else {
+          orderOptions[params.orderBy] = params.order;
+        }
+      }
+    } else {
+      orderOptions['createdAt'] = params.order; // Usa el valor del enum directamente
+    }
+
     const [entities, itemCount] = await this._userRepository.findAndCount({
       where: finalWhereClause,
       skip,
       take: params.perPage,
-      order: { createdAt: params.order ?? 'DESC' },
+      order: orderOptions,
       relations: ['roleType'],
     });
 
